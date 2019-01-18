@@ -1,6 +1,6 @@
 {
   "name": "app_ts",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@types/jest": "23.3.10",
