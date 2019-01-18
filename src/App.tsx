@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { SFC } from 'react'
+import styled from '@emotion/styled'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+type ComponentProps = {
+  className?: string
+  label: string
 }
 
-export default App;
+const Component: SFC<ComponentProps> = ({
+  label,
+  className
+}) => <div className={className}>{label}</div>
+
+const StyledComponent0 = styled(Component)`
+  color: yellow;
+`
+
+const StyledComponent1 = styled(Component)({
+  color: 'blue'
+})
+
+function App() {
+  return (
+    <div>
+      <StyledComponent0 label="Yea! No need to re-type this label prop." />
+      <StyledComponent1 label="Yea! No need to re-type this label prop." />
+    </div>
+  )
+}
+
+export default App
